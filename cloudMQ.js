@@ -29,7 +29,7 @@ function start() {
 
 function whenConnected(){
   startPublisher()
-  startWorker()
+  startListener()
 }
 
 // start publisher
@@ -73,7 +73,7 @@ function publish(exchange, routingKey, content) {
 
 // Consume messages
 // A worker that acks messages only if processed successfully
-function startWorker() {
+function startListener() {
   amqpConn.createChannel(function(err, ch) {
     if (closeOnErr(err)) return
     ch.on("error", function(err) {
