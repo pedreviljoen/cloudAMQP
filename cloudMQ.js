@@ -119,7 +119,11 @@ function closeOnErr(err) {
 }
 
 // setInterval(function() {
-//   publish("", "jobs", new Buffer("Hello Tiaan"))
+//   publish("", "light", new Buffer("LED off"))
+// }, 2000)
+
+// setInterval(() => {
+//   publish("", "light", new Buffer('LED on'))
 // }, 1000)
 
 start()
