@@ -84,9 +84,9 @@ function startListener() {
     })
 
     ch.prefetch(10)
-    ch.assertQueue("jobs", { durable: true }, function(err, _ok) {
+    ch.assertQueue("light", { durable: true }, function(err, _ok) {
       if (closeOnErr(err)) return;
-      ch.consume("jobs", processMsg, { noAck: false })
+      ch.consume("light", processMsg, { noAck: false })
       console.log("Worker is started")
     })
 
@@ -118,8 +118,8 @@ function closeOnErr(err) {
   return true
 }
 
-setInterval(function() {
-  publish("", "jobs", new Buffer("Hello Tiaan"))
-}, 1000)
+// setInterval(function() {
+//   publish("", "jobs", new Buffer("Hello Tiaan"))
+// }, 1000)
 
 start()
