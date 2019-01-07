@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "amqplib": "^0.5.2",
-    "pika": "0.0.1-security"
+    "pika": "0.1.1"
   }
 }
